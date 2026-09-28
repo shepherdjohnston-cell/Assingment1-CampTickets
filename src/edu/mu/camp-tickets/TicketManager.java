@@ -16,7 +16,7 @@ public class TicketManager {
     public boolean cancelTicket(int id){
         Ticket ticket = ticketBook.findById(id);
         if (ticket == null) {
-            return false
+            return false;
         }
 
         return ticket.cancel();
@@ -25,7 +25,7 @@ public class TicketManager {
     public boolean admitTicket(int id){
         Ticket ticket = ticketBook.findById(id);
         if (ticket == null) {
-            return false
+            return false;
         }
 
         return ticket.admit();
@@ -35,8 +35,8 @@ public class TicketManager {
         ticketBook.printAll();
     }
 
-    public void PrintTicketsForEvent(Event event){
-        ticketBook.printForEvent();
+    public void printTicketsForEvent(Event event){
+        ticketBook.printForEvent(event);
     }
 
 }

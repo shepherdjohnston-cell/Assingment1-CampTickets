@@ -4,11 +4,11 @@ public class TicketType {
 
     public TicketType(String name, double price) {
         if (name == null || name.trim().isEmpty()){
-            throw new IllegalArguementException("Ticket Type name cannot be null or blank");
+            throw new IllegalArgumentException("Ticket Type name cannot be null or blank");
         }
 
         if (price < 0){
-            throw new IllegalArguementException("Ticket price cannot be negative");
+            throw new IllegalArgumentException("Ticket price cannot be negative");
         }
 
         this.name = name;
@@ -23,7 +23,7 @@ public class TicketType {
         return price;
     }
 
-    @override
+    @Override
     public String toString(){
         return name + ": " + price;
     }

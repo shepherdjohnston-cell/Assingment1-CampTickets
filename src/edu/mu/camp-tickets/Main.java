@@ -35,6 +35,6 @@ public class Main {
         System.out.println("All Tickets");
         manager.printAllTickets();
         System.out.println("All Tickets under " + event2);
-        manager.PrintTicketsForEvent(event2);
+        manager.printTicketsForEvent(event2);
     }
 }

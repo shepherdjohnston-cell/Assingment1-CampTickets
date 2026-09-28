@@ -6,12 +6,12 @@ public class Ticket {
     private boolean canceled;
     private boolean admitted;
 
-    public Ticket(id, event, ticketType, studentName){
-        if (id <= 0) throw new IllegalArguementException("Id has to be a positive integer");
+    public Ticket(int id, Event event, TicketType ticketType, String studentName){
+        if (id <= 0) throw new IllegalArgumentException("Id has to be a positive integer");
 
-        if(event == null || ticketType == null) throw new IllegalArguementException("Event and TicketType cannot be null");
+        if(event == null || ticketType == null) throw new IllegalArgumentException("Event and TicketType cannot be null");
 
-        if (studentName == null || studentName.trim().isEmpty()) throw new IllegalArguementException("Student Name cannot be null or blank");
+        if (studentName == null || studentName.trim().isEmpty()) throw new IllegalArgumentException("Student Name cannot be null or blank");
 
         this.id = id;
         this.event = event;
@@ -29,7 +29,7 @@ public class Ticket {
         return false;
     }
 
-    public void admit(){
+    public boolean admit(){
         if (!isAdmitted() && !isCanceled()){
             this.admitted = true;
             return true;
@@ -65,7 +65,7 @@ public class Ticket {
         return !canceled && !admitted;
     }
 
-    @override
+    @Override
     public String toString(){
         String status = "Active";
         if (canceled){

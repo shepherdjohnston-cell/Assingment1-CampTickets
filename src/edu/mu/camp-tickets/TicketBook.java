@@ -4,7 +4,7 @@ public class TicketBook{
 
     public TicketBook(int capacity) {
         if (capacity <= 0) {
-            throw new IllegalArguementException("Capacity must be greater than 0.");
+            throw new IllegalArgumentException("Capacity must be greater than 0.");
         }
 
         this.tickets = new Ticket[capacity];
@@ -13,7 +13,7 @@ public class TicketBook{
 
     public Ticket createTicket(int id, Event event, TicketType type, String studentName){
         if (count >= tickets.length) {
-            throw new IllegalStateException("Ticket Book is full")
+            throw new IllegalStateException("Ticket Book is full");
         }
 
         Ticket ticket = new Ticket(id, event, type, studentName);
@@ -41,7 +41,7 @@ public class TicketBook{
         }
     }
 
-    public void PrintForEvent(Event event){
+    public void printForEvent(Event event){
         for (int i = 0; i < count; i++){
             //using == operator to check if the event references are the same
             if (tickets[i].getEvent() == event){
