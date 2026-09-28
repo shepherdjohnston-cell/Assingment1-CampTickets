@@ -31,5 +31,12 @@ public class TicketManager {
         return ticket.admit();
     }
 
+    public void printAllTickets(){
+        ticketBook.printAll();
+    }
+
+    public void PrintTicketsForEvent(Event event){
+        ticketBook.printForEvent();
+    }
 
 }
