@@ -25,6 +25,6 @@ public class TicketType {
 
     @override
     public String toString(){
-        return name + ": " + price
+        return name + ": " + price;
     }
 }
